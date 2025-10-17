@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { ASSETS } from '@/lib/constants';
 
 const AboutSection: React.FC = () => {
     const containerVariants = {
@@ -135,7 +136,7 @@ const AboutSection: React.FC = () => {
                             {/* Container da imagem */}
                             <div className="relative w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
                                 <Image
-                                    src={`${process.env.NODE_ENV === 'production' ? '/lucasmissibadev' : ''}/profile/profile.png`}
+                                    src={ASSETS.PROFILE_IMAGE}
                                     alt="Lucas Missiba"
                                     fill
                                     className="object-cover"

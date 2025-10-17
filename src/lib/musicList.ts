@@ -7,39 +7,39 @@ export interface Music {
     duration: number;
 }
 
-const basePath = process.env.NODE_ENV === 'production' ? '/lucasmissibadev' : '';
+import { ASSETS } from './constants';
 
 export const musicList: Music[] = [
     {
         id: 1,
         title: "Amores, Vícios e Obsessões",
         artist: "BK",
-        src: `${basePath}/music/Amores, Vícios e Obsessões - BK.mp3`,
-        cover: `${basePath}/albums/castelos e ruinas.avif`,
+        src: ASSETS.MUSIC.AMORES_VICIOS,
+        cover: ASSETS.ALBUMS.CASTELOS_RUINAS,
         duration: 240, // 4 minutos
     },
     {
         id: 2,
         title: "Eu Consegui",
         artist: "BK",
-        src: `${basePath}/music/Eu Consegui - BK.mp3`,
-        cover: `${basePath}/albums/diamantes.avif`,
+        src: ASSETS.MUSIC.EU_CONSIGUI,
+        cover: ASSETS.ALBUMS.DIAMANTES,
         duration: 195, // 3:15 minutos
     },
     {
         id: 3,
         title: "Tudo mudou e nada mudou",
         artist: "BK",
-        src: `${basePath}/music/Tudo mudou e nada mudou - BK.mp3`,
-        cover: `${basePath}/albums/icarus.avif`,
+        src: ASSETS.MUSIC.TUDO_MUDOU,
+        cover: ASSETS.ALBUMS.ICARUS,
         duration: 210, // 3:30 minutos
     },
     {
         id: 4,
         title: "Universo",
         artist: "BK",
-        src: `${basePath}/music/Universo - BK.mp3`,
-        cover: `${basePath}/albums/gigantes.png`,
+        src: ASSETS.MUSIC.UNIVERSO,
+        cover: ASSETS.ALBUMS.GIGANTES,
         duration: 225, // 3:45 minutos
     },
 ];

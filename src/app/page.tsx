@@ -9,6 +9,7 @@ import StackGrid from '@/components/StackGrid';
 import Player3D from '@/components/Player3D';
 import Footer from '@/components/Footer';
 import { ArrowDown, Code, Music, Sparkles } from 'lucide-react';
+import { ASSETS } from '@/lib/constants';
 
 export default function Home() {
     const scrollToNext = () => {
@@ -70,7 +71,7 @@ export default function Home() {
                         >
                             <div className="w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
                                 <Image
-                                    src={`${process.env.NODE_ENV === 'production' ? '/lucasmissibadev' : ''}/profile/profile.png`}
+                                    src={ASSETS.PROFILE_IMAGE}
                                     alt="Lucas Missiba"
                                     fill
                                     className="object-cover"
