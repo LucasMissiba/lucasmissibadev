@@ -70,7 +70,7 @@ export default function Home() {
                         >
                             <div className="w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
                                 <Image
-                                    src="/profile/profile.png"
+                                    src={`${process.env.NODE_ENV === 'production' ? '/lucasmissibadev' : ''}/profile/profile.png`}
                                     alt="Lucas Missiba"
                                     fill
                                     className="object-cover"
