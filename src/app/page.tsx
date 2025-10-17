@@ -113,8 +113,8 @@ export default function Home() {
                             className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 max-w-4xl mx-auto"
                         >
                             {[
-                                { icon: Code, label: "Projetos", value: "5" },
-                                { icon: Sparkles, label: "Tecnologias", value: "25+" },
+                                { icon: Code, label: "Projetos", value: "2" },
+                                { icon: Sparkles, label: "Tecnologias", value: "20+" },
                                 { icon: Code, label: "Anos", value: "2" },
                             ].map((stat, index) => (
                                 <motion.div

@@ -20,56 +20,23 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Sistema de Gestão Hospitalar - Alocama",
-    description: "Plataforma web completa para gestão de equipamentos hospitalares e propostas comerciais",
-    longDescription: "Desenvolvimento de uma plataforma web completa para gestão de equipamentos hospitalares e propostas comerciais da Alocama, empresa especializada em equipamentos médicos e hospitalares. Sistema que automatiza completamente o processo de propostas comerciais, reduzindo em 70% o tempo de criação de orçamentos.",
+    title: "GhostCatalog - Alocama",
+    description: "Catálogo digital completo com 200+ equipamentos hospitalares e sistema de propostas automatizado",
+    longDescription: "Plataforma web completa para gestão de equipamentos hospitalares e propostas comerciais da Alocama. Sistema que automatiza completamente o processo de propostas comerciais, reduzindo em 70% o tempo de criação de orçamentos. Inclui catálogo digital com mais de 200 equipamentos, sistema de busca avançada, filtros inteligentes e integração com sistema de propostas.",
     technologies: ["HTML5", "CSS3", "JavaScript ES6+", "PHP 8.0+", "MySQL", "JWT", "WebGL"],
     category: "Full Stack",
     status: "completed",
     githubUrl: "#",
-    liveUrl: "#"
+    liveUrl: "https://catalogoalocama.com"
   },
   {
     id: 2,
-    title: "Portal do Tribunal de Justiça",
-    description: "Portal web para consulta de processos judiciais durante estágio",
-    longDescription: "Portal desenvolvido durante estágio no TJRJ para facilitar consultas de processos judiciais, com interface intuitiva e sistema de busca avançada. Melhorou significativamente o acesso à informação para advogados e cidadãos.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Bootstrap"],
+    title: "GhostMind CRM",
+    description: "O maior CRM do Brasil com IA integrada, automação avançada e multi-tenant enterprise",
+    longDescription: "CRM revolucionário com inteligência artificial integrada (OpenAI GPT-4o), automação visual de workflows, RPA nativo, WhatsApp Business integrado e arquitetura multi-tenant enterprise. Inclui sistema de autenticação JWT, gestão de leads com IA, business intelligence avançado, 50+ integrações nativas e segurança enterprise. Stack moderno com Next.js 15, React 19, NestJS, TypeScript e Prisma ORM.",
+    technologies: ["Next.js 15", "React 19", "NestJS", "TypeScript", "Prisma ORM", "MySQL", "OpenAI GPT-4o", "WhatsApp API", "Docker", "Redis"],
     category: "Full Stack",
-    status: "completed",
-    githubUrl: "#",
-    liveUrl: "#"
-  },
-  {
-    id: 3,
-    title: "Sistema de Autenticação JWT",
-    description: "API robusta de autenticação com JWT e controle de permissões",
-    longDescription: "Sistema de autenticação completo com JWT, refresh tokens, controle de permissões multi-nível e rate limiting. Implementa segurança avançada com proteção contra XSS, CSRF e ataques de força bruta.",
-    technologies: ["PHP 8.0+", "MySQL", "JWT", "CORS", "Rate Limiting", "XSS Protection"],
-    category: "Backend",
-    status: "completed",
-    githubUrl: "#",
-    liveUrl: "#"
-  },
-  {
-    id: 4,
-    title: "Dashboard de Gestão - Alocama",
-    description: "Dashboard com métricas em tempo real e analytics avançados",
-    longDescription: "Dashboard de gestão com métricas em tempo real, analytics avançados e relatórios automatizados. Centraliza informações de vendas, equipamentos e performance da equipe comercial.",
-    technologies: ["JavaScript ES6+", "Chart.js", "WebGL", "LocalStorage", "RESTful APIs"],
-    category: "Frontend",
-    status: "completed",
-    githubUrl: "#",
-    liveUrl: "#"
-  },
-  {
-    id: 5,
-    title: "Catálogo Digital de Equipamentos",
-    description: "Catálogo digital com 200+ equipamentos hospitalares",
-    longDescription: "Catálogo digital completo com mais de 200 equipamentos hospitalares, sistema de busca avançada, filtros inteligentes e integração com sistema de propostas. Interface responsiva com animações CSS e WebGL.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "WebGL", "Responsive Design", "LocalStorage"],
-    category: "Frontend",
-    status: "completed",
+    status: "in-progress",
     githubUrl: "#",
     liveUrl: "#"
   }
@@ -259,8 +226,8 @@ const ProjectsSection: React.FC = () => {
         >
           {[
             { icon: Code, label: "Projetos Concluídos", value: projects.filter(p => p.status === 'completed').length },
-            { icon: Database, label: "Tecnologias", value: "15+" },
-            { icon: Globe, label: "Categorias", value: "3" },
+            { icon: Database, label: "Tecnologias", value: "20+" },
+            { icon: Globe, label: "Categorias", value: "1" },
             { icon: Code, label: "Em Desenvolvimento", value: projects.filter(p => p.status === 'in-progress').length },
           ].map((stat, index) => (
             <motion.div
