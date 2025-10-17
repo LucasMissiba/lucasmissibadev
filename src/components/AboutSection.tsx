@@ -104,7 +104,7 @@ const AboutSection: React.FC = () => {
                             </div>
                             <div className="glass rounded-xl p-6 text-center hover-lift">
                                 <div className="text-3xl font-bold text-white mb-2">2</div>
-                                <div className="text-sm text-gray-400">Cursos em andamento</div>
+                                <div className="text-sm text-gray-400">Anos de experiência</div>
                             </div>
                         </motion.div>
                     </motion.div>
