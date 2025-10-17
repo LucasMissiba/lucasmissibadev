@@ -39,8 +39,16 @@ export const musicList: Music[] = [
         title: "Universo",
         artist: "BK",
         src: ASSETS.MUSIC.UNIVERSO,
-        cover: ASSETS.ALBUMS.GIGANTES,
+        cover: ASSETS.ALBUMS.LIDER_EM_MOVIMENTO,
         duration: 225, // 3:45 minutos
+    },
+    {
+        id: 5,
+        title: "Deus do Furdunço",
+        artist: "BK",
+        src: ASSETS.MUSIC.DEUS_DO_FURDUNCO,
+        cover: ASSETS.ALBUMS.GIGANTES,
+        duration: 200, // 3:20 minutos
     },
 ];
 

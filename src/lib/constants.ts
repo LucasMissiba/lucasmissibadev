@@ -16,11 +16,13 @@ export const ASSETS = {
     EU_CONSIGUI: getAssetPath('/music/Eu Consegui - BK.mp3'),
     TUDO_MUDOU: getAssetPath('/music/Tudo mudou e nada mudou - BK.mp3'),
     UNIVERSO: getAssetPath('/music/Universo - BK.mp3'),
+    DEUS_DO_FURDUNCO: getAssetPath('/music/Deus do Furdunço - BK.mp3'),
   },
   ALBUMS: {
     CASTELOS_RUINAS: getAssetPath('/albums/castelos e ruinas.avif'),
     DIAMANTES: getAssetPath('/albums/diamantes.avif'),
     ICARUS: getAssetPath('/albums/icarus.avif'),
     GIGANTES: getAssetPath('/albums/gigantes.png'),
+    LIDER_EM_MOVIMENTO: getAssetPath('/albums/lider em movimento.jpg'),
   }
 };
