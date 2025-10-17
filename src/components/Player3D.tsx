@@ -47,6 +47,11 @@ const Player3D: React.FC = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
+    // Reset audio when music changes
+    audio.load();
+    setCurrentTime(0);
+    setIsPlaying(false);
+
     const updateTime = () => setCurrentTime(audio.currentTime);
     const updateDuration = () => setDuration(audio.duration);
     const handleEnded = () => {
@@ -55,12 +60,17 @@ const Player3D: React.FC = () => {
     };
     const handleLoadStart = () => setIsLoading(true);
     const handleCanPlay = () => setIsLoading(false);
+    const handleError = (e: Event) => {
+      console.error('Erro ao carregar áudio:', e);
+      setIsLoading(false);
+    };
 
     audio.addEventListener('timeupdate', updateTime);
     audio.addEventListener('loadedmetadata', updateDuration);
     audio.addEventListener('ended', handleEnded);
     audio.addEventListener('loadstart', handleLoadStart);
     audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('error', handleError);
 
     return () => {
       audio.removeEventListener('timeupdate', updateTime);
@@ -68,6 +78,7 @@ const Player3D: React.FC = () => {
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('loadstart', handleLoadStart);
       audio.removeEventListener('canplay', handleCanPlay);
+      audio.removeEventListener('error', handleError);
     };
   }, [currentMusic, handleNext]);
 
@@ -137,12 +148,25 @@ const Player3D: React.FC = () => {
                         }}
                         style={{ transformStyle: "preserve-3d" }}
                     >
-            <div className="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-4">🎵</div>
-                <p className="text-white text-sm font-medium">Player Musical</p>
-              </div>
-            </div>
+                        <Image
+                            src={currentMusic.cover}
+                            alt={`Capa do álbum - ${currentMusic.title}`}
+                            fill
+                            className="object-cover"
+                            priority
+                            onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const fallback = target.nextElementSibling as HTMLElement;
+                                if (fallback) fallback.style.display = 'flex';
+                            }}
+                        />
+                        <div className="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center" style={{ display: 'none' }}>
+                            <div className="text-center">
+                                <div className="text-6xl mb-4">🎵</div>
+                                <p className="text-white text-sm font-medium">Player Musical</p>
+                            </div>
+                        </div>
                     </motion.div>
 
                     {/* Efeito de brilho */}
@@ -284,6 +308,10 @@ const Player3D: React.FC = () => {
                     ref={audioRef}
                     src={currentMusic.src}
                     preload="metadata"
+                    crossOrigin="anonymous"
+                    onError={(e) => {
+                        console.error('Erro no elemento de áudio:', e);
+                    }}
                 />
             </motion.div>
         </div>

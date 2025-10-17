@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import AboutSection from '@/components/AboutSection';
 import StackGrid from '@/components/StackGrid';
@@ -68,9 +69,22 @@ export default function Home() {
                             }}
                         >
                             <div className="w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-                  <span className="text-6xl font-bold text-white">LM</span>
-                </div>
+                                <Image
+                                    src="/profile/profile.png"
+                                    alt="Lucas Missiba"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                    onError={(e) => {
+                                        const target = e.target as HTMLImageElement;
+                                        target.style.display = 'none';
+                                        const fallback = target.nextElementSibling as HTMLElement;
+                                        if (fallback) fallback.style.display = 'flex';
+                                    }}
+                                />
+                                <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center" style={{ display: 'none' }}>
+                                    <span className="text-6xl font-bold text-white">LM</span>
+                                </div>
                             </div>
 
                             {/* Efeito de brilho */}

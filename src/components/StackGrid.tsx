@@ -2,49 +2,76 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { 
+  FileText, 
+  Zap, 
+  Type, 
+  Palette, 
+  Layers, 
+  Sparkles, 
+  BarChart3,
+  Building2,
+  Server,
+  Database,
+  Shield,
+  Bot,
+  Plug,
+  Container,
+  Globe,
+  Circle,
+  GitBranch,
+  Search,
+  TestTube,
+  Timer,
+  ShieldCheck,
+  Lock,
+  RotateCcw,
+  Key
+} from 'lucide-react';
 
 interface StackItem {
     name: string;
     emoji: string;
+    icon: React.ReactNode;
     description: string;
     category: string;
 }
 
 const stackData: StackItem[] = [
   // Frontend
-  { name: "Next.js 15", emoji: "⚛️", description: "Framework React para SSR/SSG", category: "Frontend" },
-  { name: "React 19", emoji: "⚛️", description: "Biblioteca para interfaces de usuário", category: "Frontend" },
-  { name: "TypeScript 5.2", emoji: "🔷", description: "JavaScript com tipagem estática", category: "Frontend" },
-  { name: "TailwindCSS 3.3", emoji: "🎨", description: "Framework CSS utilitário", category: "Frontend" },
-  { name: "ShadCN/UI", emoji: "🎭", description: "Componentes UI reutilizáveis", category: "Frontend" },
-  { name: "Framer Motion 10.16", emoji: "✨", description: "Biblioteca de animações", category: "Frontend" },
-  { name: "Recharts 2.8", emoji: "📊", description: "Biblioteca de gráficos", category: "Frontend" },
+  { name: "Next.js 15", emoji: "⚛️", icon: <FileText className="w-8 h-8 text-blue-400" />, description: "Framework React para SSR/SSG", category: "Frontend" },
+  { name: "React 19", emoji: "⚛️", icon: <Zap className="w-8 h-8 text-cyan-400" />, description: "Biblioteca para interfaces de usuário", category: "Frontend" },
+  { name: "TypeScript 5.2", emoji: "🔷", icon: <Type className="w-8 h-8 text-blue-500" />, description: "JavaScript com tipagem estática", category: "Frontend" },
+  { name: "TailwindCSS 3.3", emoji: "🎨", icon: <Palette className="w-8 h-8 text-teal-400" />, description: "Framework CSS utilitário", category: "Frontend" },
+  { name: "ShadCN/UI", emoji: "🎭", icon: <Layers className="w-8 h-8 text-purple-400" />, description: "Componentes UI reutilizáveis", category: "Frontend" },
+  { name: "Framer Motion 10.16", emoji: "✨", icon: <Sparkles className="w-8 h-8 text-pink-400" />, description: "Biblioteca de animações", category: "Frontend" },
+  { name: "Recharts 2.8", emoji: "📊", icon: <BarChart3 className="w-8 h-8 text-green-400" />, description: "Biblioteca de gráficos", category: "Frontend" },
   
   // Backend
-  { name: "NestJS 10.3", emoji: "🏗️", description: "Framework Node.js escalável", category: "Backend" },
-  { name: "Node.js 22+", emoji: "🟢", description: "Runtime JavaScript", category: "Backend" },
-  { name: "TypeScript 5.2", emoji: "🔷", description: "JavaScript com tipagem estática", category: "Backend" },
-  { name: "Prisma 5.7", emoji: "🔺", description: "ORM moderno para TypeScript", category: "Backend" },
-  { name: "MySQL 8.0", emoji: "🗄️", description: "Sistema de gerenciamento de banco", category: "Backend" },
-  { name: "JWT", emoji: "🎫", description: "Autenticação baseada em tokens", category: "Backend" },
-  { name: "OpenAI 4.20", emoji: "🤖", description: "API de inteligência artificial", category: "Backend" },
-  { name: "Socket.io 4.7", emoji: "🔌", description: "Comunicação em tempo real", category: "Backend" },
+  { name: "NestJS 10.3", emoji: "🏗️", icon: <Building2 className="w-8 h-8 text-red-400" />, description: "Framework Node.js escalável", category: "Backend" },
+  { name: "Node.js 22+", emoji: "🟢", icon: <Server className="w-8 h-8 text-green-500" />, description: "Runtime JavaScript", category: "Backend" },
+  { name: "TypeScript 5.2", emoji: "🔷", icon: <Type className="w-8 h-8 text-blue-500" />, description: "JavaScript com tipagem estática", category: "Backend" },
+  { name: "Prisma 5.7", emoji: "🔺", icon: <Database className="w-8 h-8 text-indigo-400" />, description: "ORM moderno para TypeScript", category: "Backend" },
+  { name: "MySQL 8.0", emoji: "🗄️", icon: <Database className="w-8 h-8 text-orange-400" />, description: "Sistema de gerenciamento de banco", category: "Backend" },
+  { name: "JWT", emoji: "🎫", icon: <Shield className="w-8 h-8 text-yellow-400" />, description: "Autenticação baseada em tokens", category: "Backend" },
+  { name: "OpenAI 4.20", emoji: "🤖", icon: <Bot className="w-8 h-8 text-cyan-400" />, description: "API de inteligência artificial", category: "Backend" },
+  { name: "Socket.io 4.7", emoji: "🔌", icon: <Plug className="w-8 h-8 text-purple-400" />, description: "Comunicação em tempo real", category: "Backend" },
   
   // Ferramentas
-  { name: "Docker", emoji: "🐳", description: "Containerização de aplicações", category: "Ferramentas" },
-  { name: "Nginx", emoji: "🌐", description: "Servidor web e proxy reverso", category: "Ferramentas" },
-  { name: "Redis", emoji: "🔴", description: "Banco de dados em memória", category: "Ferramentas" },
-  { name: "GitHub Actions", emoji: "⚙️", description: "CI/CD automatizado", category: "Ferramentas" },
-  { name: "ESLint & Prettier", emoji: "🔍", description: "Ferramentas de qualidade de código", category: "Ferramentas" },
-  { name: "Jest", emoji: "🧪", description: "Framework de testes", category: "Ferramentas" },
+  { name: "Docker", emoji: "🐳", icon: <Container className="w-8 h-8 text-blue-400" />, description: "Containerização de aplicações", category: "Ferramentas" },
+  { name: "Nginx", emoji: "🌐", icon: <Globe className="w-8 h-8 text-green-400" />, description: "Servidor web e proxy reverso", category: "Ferramentas" },
+  { name: "Redis", emoji: "🔴", icon: <Circle className="w-8 h-8 text-red-500" />, description: "Banco de dados em memória", category: "Ferramentas" },
+  { name: "GitHub Actions", emoji: "⚙️", icon: <GitBranch className="w-8 h-8 text-gray-400" />, description: "CI/CD automatizado", category: "Ferramentas" },
+  { name: "ESLint & Prettier", emoji: "🔍", icon: <Search className="w-8 h-8 text-pink-400" />, description: "Ferramentas de qualidade de código", category: "Ferramentas" },
+  { name: "Jest", emoji: "🧪", icon: <TestTube className="w-8 h-8 text-green-400" />, description: "Framework de testes", category: "Ferramentas" },
   
   // Segurança
-  { name: "Rate Limiting", emoji: "🚦", description: "Controle de taxa de requisições", category: "Segurança" },
-  { name: "Input Sanitization", emoji: "🧹", description: "Sanitização de dados de entrada", category: "Segurança" },
-  { name: "CORS", emoji: "🌍", description: "Controle de acesso entre origens", category: "Segurança" },
-  { name: "HTTPS/SSL", emoji: "🔒", description: "Criptografia de comunicação", category: "Segurança" },
-  { name: "JWT Rotation", emoji: "🔄", description: "Rotação automática de tokens", category: "Segurança" },
-  { name: "bcrypt", emoji: "🔐", description: "Hash seguro de senhas", category: "Segurança" },
+  { name: "Rate Limiting", emoji: "🚦", icon: <Timer className="w-8 h-8 text-orange-400" />, description: "Controle de taxa de requisições", category: "Segurança" },
+  { name: "Input Sanitization", emoji: "🧹", icon: <ShieldCheck className="w-8 h-8 text-blue-400" />, description: "Sanitização de dados de entrada", category: "Segurança" },
+  { name: "CORS", emoji: "🌍", icon: <Globe className="w-8 h-8 text-cyan-400" />, description: "Controle de acesso entre origens", category: "Segurança" },
+  { name: "HTTPS/SSL", emoji: "🔒", icon: <Lock className="w-8 h-8 text-green-400" />, description: "Criptografia de comunicação", category: "Segurança" },
+  { name: "JWT Rotation", emoji: "🔄", icon: <RotateCcw className="w-8 h-8 text-purple-400" />, description: "Rotação automática de tokens", category: "Segurança" },
+  { name: "bcrypt", emoji: "🔐", icon: <Key className="w-8 h-8 text-yellow-400" />, description: "Hash seguro de senhas", category: "Segurança" },
 ];
 
 const categoryColors = {
@@ -145,14 +172,14 @@ const StackGrid: React.FC = () => {
                                                 {/* Conteúdo */}
                                                 <div className="relative z-10">
                                                     <motion.div
-                                                        className="text-4xl mb-4"
+                                                        className="mb-4 flex justify-center"
                                                         whileHover={{
                                                             rotate: [0, -10, 10, -10, 0],
                                                             scale: 1.2,
                                                         }}
                                                         transition={{ duration: 0.5 }}
                                                     >
-                                                        {item.emoji}
+                                                        {item.icon}
                                                     </motion.div>
 
                                                     <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-white transition-colors">

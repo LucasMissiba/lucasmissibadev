@@ -134,14 +134,27 @@ const AboutSection: React.FC = () => {
 
                             {/* Container da imagem */}
                             <div className="relative w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                      <span className="text-4xl font-bold text-white">LM</span>
-                    </div>
-                    <p className="text-white text-sm">Lucas Missiba</p>
-                  </div>
-                </div>
+                                <Image
+                                    src="/profile/profile.png"
+                                    alt="Lucas Missiba"
+                                    fill
+                                    className="object-cover"
+                                    priority
+                                    onError={(e) => {
+                                        const target = e.target as HTMLImageElement;
+                                        target.style.display = 'none';
+                                        const fallback = target.nextElementSibling as HTMLElement;
+                                        if (fallback) fallback.style.display = 'flex';
+                                    }}
+                                />
+                                <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center" style={{ display: 'none' }}>
+                                    <div className="text-center">
+                                        <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                            <span className="text-4xl font-bold text-white">LM</span>
+                                        </div>
+                                        <p className="text-white text-sm">Lucas Missiba</p>
+                                    </div>
+                                </div>
 
                                 {/* Overlay com efeito de partículas */}
                                 <motion.div
