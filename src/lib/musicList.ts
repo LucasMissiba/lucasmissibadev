@@ -8,38 +8,38 @@ export interface Music {
 }
 
 export const musicList: Music[] = [
-  {
-    id: 1,
-    title: "Amores, Vícios e Obsessões",
-    artist: "BK",
-    src: "/music/Amores, Vícios e Obsessões - BK.mp3",
-    cover: "/albums/castelos e ruinas.avif",
-    duration: 240, // 4 minutos
-  },
-  {
-    id: 2,
-    title: "Eu Consegui",
-    artist: "BK",
-    src: "/music/Eu Consegui - BK.mp3",
-    cover: "/albums/diamantes.avif",
-    duration: 195, // 3:15 minutos
-  },
-  {
-    id: 3,
-    title: "Tudo mudou e nada mudou",
-    artist: "BK",
-    src: "/music/Tudo mudou e nada mudou - BK.mp3",
-    cover: "/albums/icarus.avif",
-    duration: 210, // 3:30 minutos
-  },
-  {
-    id: 4,
-    title: "Universo",
-    artist: "BK",
-    src: "/music/Universo - BK.mp3",
-    cover: "/albums/gigantes.png",
-    duration: 225, // 3:45 minutos
-  },
+    {
+        id: 1,
+        title: "Amores, Vícios e Obsessões",
+        artist: "BK",
+        src: "/music/Amores, Vícios e Obsessões - BK.mp3",
+        cover: "/albums/castelos e ruinas.avif",
+        duration: 240, // 4 minutos
+    },
+    {
+        id: 2,
+        title: "Eu Consegui",
+        artist: "BK",
+        src: "/music/Eu Consegui - BK.mp3",
+        cover: "/albums/diamantes.avif",
+        duration: 195, // 3:15 minutos
+    },
+    {
+        id: 3,
+        title: "Tudo mudou e nada mudou",
+        artist: "BK",
+        src: "/music/Tudo mudou e nada mudou - BK.mp3",
+        cover: "/albums/icarus.avif",
+        duration: 210, // 3:30 minutos
+    },
+    {
+        id: 4,
+        title: "Universo",
+        artist: "BK",
+        src: "/music/Universo - BK.mp3",
+        cover: "/albums/gigantes.png",
+        duration: 225, // 3:45 minutos
+    },
 ];
 
 export const getMusicById = (id: number): Music | undefined => {
