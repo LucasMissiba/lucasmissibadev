@@ -243,8 +243,8 @@ const StackGrid: React.FC = () => {
                     {[
                         { label: "Tecnologias", value: stackData.length },
                         { label: "Categorias", value: categories.length },
-                        { label: "Anos de Experiência", value: "3+" },
-                        { label: "Projetos Concluídos", value: "50+" },
+                        { label: "Anos de Experiência", value: "2" },
+                        { label: "Projetos Concluídos", value: "5" },
                     ].map((stat, index) => (
                         <motion.div
                             key={stat.label}

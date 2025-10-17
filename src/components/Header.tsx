@@ -2,11 +2,10 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(true);
     const [activeSection, setActiveSection] = useState('home');
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -14,6 +13,7 @@ const Header: React.FC = () => {
     { id: 'home', label: 'Home', href: '#home' },
     { id: 'sobre', label: 'Sobre', href: '#sobre' },
     { id: 'stacks', label: 'Stacks', href: '#stacks' },
+    { id: 'projetos', label: 'Projetos', href: '#projetos' },
     { id: 'musica', label: 'Música', href: '#musica' },
     { id: 'comentarios', label: 'Comentários', href: '#comentarios' },
     { id: 'contato', label: 'Contato', href: '#contato' },
@@ -55,11 +55,6 @@ const Header: React.FC = () => {
         setIsMenuOpen(false);
     };
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    // Alternar tema no documento
-    document.documentElement.classList.toggle('light');
-  };
 
     return (
         <motion.header
@@ -117,39 +112,8 @@ const Header: React.FC = () => {
                         ))}
                     </nav>
 
-                    {/* Dark Mode Toggle & Mobile Menu Button */}
+                    {/* Mobile Menu Button */}
                     <div className="flex items-center space-x-4">
-                        {/* Dark Mode Toggle */}
-                        <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={toggleDarkMode}
-                            className="p-2 rounded-full glass hover-glow transition-all duration-300"
-                        >
-                            <AnimatePresence mode="wait">
-                                {isDarkMode ? (
-                                    <motion.div
-                                        key="moon"
-                                        initial={{ rotate: -90, opacity: 0 }}
-                                        animate={{ rotate: 0, opacity: 1 }}
-                                        exit={{ rotate: 90, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <Moon size={20} className="text-white" />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        key="sun"
-                                        initial={{ rotate: 90, opacity: 0 }}
-                                        animate={{ rotate: 0, opacity: 1 }}
-                                        exit={{ rotate: -90, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <Sun size={20} className="text-white" />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.button>
 
                         {/* Mobile Menu Button */}
                         <motion.button

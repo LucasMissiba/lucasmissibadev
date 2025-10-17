@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import AboutSection from '@/components/AboutSection';
 import StackGrid from '@/components/StackGrid';
+import ProjectsSection from '@/components/ProjectsSection';
 import Player3D from '@/components/Player3D';
 import CommentsSection from '@/components/CommentsSection';
 import Footer from '@/components/Footer';
@@ -23,29 +24,6 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-black text-white overflow-x-hidden">
-            {/* Partículas flutuantes de fundo */}
-            <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                {[...Array(50)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className="particle"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            width: `${Math.random() * 4 + 1}px`,
-                            height: `${Math.random() * 4 + 1}px`,
-                        }}
-                        animate={{
-                            y: [0, -100],
-                            opacity: [0, 1, 0],
-                        }}
-                        transition={{
-                            duration: Math.random() * 10 + 10,
-                            repeat: Infinity,
-                            delay: Math.random() * 10,
-                        }}
-                    />
-                ))}
-            </div>
 
             <Header />
 
@@ -62,8 +40,8 @@ export default function Home() {
                     />
                 </div>
                 
-                {/* Overlay com fade */}
-                <div className="absolute inset-0 bg-black/60 z-10" />
+                {/* Overlay com fade gradiente */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent z-10" />
                 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
                     <motion.div
@@ -179,6 +157,9 @@ export default function Home() {
 
             {/* Seção Stacks */}
             <StackGrid />
+
+            {/* Seção Projetos */}
+            <ProjectsSection />
 
             {/* Seção Música */}
             <section id="musica" className="py-20 px-4">
