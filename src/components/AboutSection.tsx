@@ -134,16 +134,16 @@ const AboutSection: React.FC = () => {
 
                             {/* Container da imagem */}
                             <div className="relative w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
-                                <Image
-                                    src="/profile/perfil.jpg"
-                                    alt="Lucas Missiba - Desenvolvedor Full Stack"
-                                    fill
-                                    className="object-cover"
-                                    onError={(e) => {
-                                        const target = e.target as HTMLImageElement;
-                                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23333'/%3E%3Ccircle cx='200' cy='180' r='60' fill='%23666'/%3E%3Cpath d='M120 320 Q200 280 280 320 L280 400 L120 400 Z' fill='%23666'/%3E%3Ctext x='200' y='350' text-anchor='middle' fill='white' font-family='Arial' font-size='14'%3ELucas Missiba%3C/text%3E%3C/svg%3E";
-                                    }}
-                                />
+                <Image
+                  src="/profile/profile.png"
+                  alt="Lucas Missiba - Desenvolvedor Full Stack"
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23333'/%3E%3Ccircle cx='200' cy='180' r='60' fill='%23666'/%3E%3Cpath d='M120 320 Q200 280 280 320 L280 400 L120 400 Z' fill='%23666'/%3E%3Ctext x='200' y='350' text-anchor='middle' fill='white' font-family='Arial' font-size='14'%3ELucas Missiba%3C/text%3E%3C/svg%3E";
+                  }}
+                />
 
                                 {/* Overlay com efeito de partículas */}
                                 <motion.div

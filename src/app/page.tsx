@@ -68,15 +68,15 @@ export default function Home() {
                             }}
                         >
                             <div className="w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
-                                <img
-                                    src="/profile/perfil.jpg"
-                                    alt="Lucas Missiba"
-                                    className="w-full h-full object-cover"
-                                    onError={(e) => {
-                                        const target = e.target as HTMLImageElement;
-                                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' fill='%23333'/%3E%3Ccircle cx='64' cy='50' r='25' fill='%23666'/%3E%3Cpath d='M30 100 Q64 80 98 100 L98 128 L30 128 Z' fill='%23666'/%3E%3Ctext x='64' y='115' text-anchor='middle' fill='white' font-family='Arial' font-size='10'%3ELucas%3C/text%3E%3C/svg%3E";
-                                    }}
-                                />
+                <img
+                  src="/profile/profile.png"
+                  alt="Lucas Missiba"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' fill='%23333'/%3E%3Ccircle cx='64' cy='50' r='25' fill='%23666'/%3E%3Cpath d='M30 100 Q64 80 98 100 L98 128 L30 128 Z' fill='%23666'/%3E%3Ctext x='64' y='115' text-anchor='middle' fill='white' font-family='Arial' font-size='10'%3ELucas%3C/text%3E%3C/svg%3E";
+                  }}
+                />
                             </div>
 
                             {/* Efeito de brilho */}
