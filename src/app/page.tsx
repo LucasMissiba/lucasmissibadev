@@ -56,51 +56,7 @@ export default function Home() {
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="space-y-8"
                     >
-                        {/* Avatar flutuante */}
-                        <motion.div
-                            className="relative mx-auto w-32 h-32 mb-8"
-                            animate={{
-                                y: [0, -20, 0],
-                                rotateY: [0, 10, 0],
-                            }}
-                            transition={{
-                                duration: 6,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                        >
-                            <div className="w-full h-full rounded-full overflow-hidden glass border-4 border-white/20 shadow-2xl">
-                                <Image
-                                    src={ASSETS.PROFILE_IMAGE}
-                                    alt="Lucas Missiba"
-                                    fill
-                                    className="object-cover"
-                                    priority
-                                    onError={(e) => {
-                                        const target = e.target as HTMLImageElement;
-                                        target.style.display = 'none';
-                                        const fallback = target.nextElementSibling as HTMLElement;
-                                        if (fallback) fallback.style.display = 'flex';
-                                    }}
-                                />
-                                <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center" style={{ display: 'none' }}>
-                                    <span className="text-6xl font-bold text-white">LM</span>
-                                </div>
-                            </div>
-
-                            {/* Efeito de brilho */}
-                            <motion.div
-                                className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                                animate={{
-                                    rotate: [0, 360],
-                                }}
-                                transition={{
-                                    duration: 8,
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                }}
-                            />
-                        </motion.div>
+                        {/* Avatar flutuante - Removido */}
 
                         {/* Título principal */}
                         <motion.h1
