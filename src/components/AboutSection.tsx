@@ -84,7 +84,7 @@ const AboutSection: React.FC = () => {
                                 variants={itemVariants}
                                 className="border-l-4 border-white/30 pl-6 italic text-lg text-gray-200 bg-white/5 p-6 rounded-r-lg"
                             >
-                                "Acredito que a verdadeira inovação nasce da combinação entre visão estratégica e execução prática. Cada linha de código que escrevo é pensada para impactar pessoas reais, resolver problemas reais."
+                                &ldquo;Acredito que a verdadeira inovação nasce da combinação entre visão estratégica e execução prática. Cada linha de código que escrevo é pensada para impactar pessoas reais, resolver problemas reais.&rdquo;
                             </motion.blockquote>
 
                             <p>

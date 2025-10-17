@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX } from 'lucide-react';
+import Image from 'next/image';
 import { musicList, Music, getNextMusic, getPreviousMusic } from '@/lib/musicList';
 
 const Player3D: React.FC = () => {
@@ -16,33 +17,33 @@ const Player3D: React.FC = () => {
 
     const audioRef = useRef<HTMLAudioElement>(null);
 
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (!audio) return;
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-        const updateTime = () => setCurrentTime(audio.currentTime);
-        const updateDuration = () => setDuration(audio.duration);
-        const handleEnded = () => {
-            setIsPlaying(false);
-            handleNext();
-        };
-        const handleLoadStart = () => setIsLoading(true);
-        const handleCanPlay = () => setIsLoading(false);
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    const updateDuration = () => setDuration(audio.duration);
+    const handleEnded = () => {
+      setIsPlaying(false);
+      handleNext();
+    };
+    const handleLoadStart = () => setIsLoading(true);
+    const handleCanPlay = () => setIsLoading(false);
 
-        audio.addEventListener('timeupdate', updateTime);
-        audio.addEventListener('loadedmetadata', updateDuration);
-        audio.addEventListener('ended', handleEnded);
-        audio.addEventListener('loadstart', handleLoadStart);
-        audio.addEventListener('canplay', handleCanPlay);
+    audio.addEventListener('timeupdate', updateTime);
+    audio.addEventListener('loadedmetadata', updateDuration);
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('loadstart', handleLoadStart);
+    audio.addEventListener('canplay', handleCanPlay);
 
-        return () => {
-            audio.removeEventListener('timeupdate', updateTime);
-            audio.removeEventListener('loadedmetadata', updateDuration);
-            audio.removeEventListener('ended', handleEnded);
-            audio.removeEventListener('loadstart', handleLoadStart);
-            audio.removeEventListener('canplay', handleCanPlay);
-        };
-    }, [currentMusic]);
+    return () => {
+      audio.removeEventListener('timeupdate', updateTime);
+      audio.removeEventListener('loadedmetadata', updateDuration);
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('loadstart', handleLoadStart);
+      audio.removeEventListener('canplay', handleCanPlay);
+    };
+  }, [currentMusic, handleNext]);
 
     const togglePlayPause = () => {
         const audio = audioRef.current;
@@ -136,15 +137,16 @@ const Player3D: React.FC = () => {
                         }}
                         style={{ transformStyle: "preserve-3d" }}
                     >
-                        <img
-                            src={currentMusic.cover}
-                            alt={`Capa do álbum - ${currentMusic.title}`}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%23333'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='16'%3E🎵%3C/text%3E%3C/svg%3E";
-                            }}
-                        />
+            <Image
+              src={currentMusic.cover}
+              alt={`Capa do álbum - ${currentMusic.title}`}
+              fill
+              className="object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%23333'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='16'%3E🎵%3C/text%3E%3C/svg%3E";
+              }}
+            />
                     </motion.div>
 
                     {/* Efeito de brilho */}

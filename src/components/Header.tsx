@@ -18,30 +18,30 @@ const Header: React.FC = () => {
         { id: 'contato', label: 'Contato', href: '#contato' },
     ];
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      // Detectar seção ativa
+      const sections = navItems.map(item => document.getElementById(item.id)).filter(Boolean);
+      const scrollPosition = window.scrollY + 100;
 
-            // Detectar seção ativa
-            const sections = navItems.map(item => document.getElementById(item.id)).filter(Boolean);
-            const scrollPosition = window.scrollY + 100;
+      for (const section of sections) {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    };
 
-            for (const section of sections) {
-                if (section) {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.offsetHeight;
-
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        setActiveSection(section.id);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [navItems]);
 
     const scrollToSection = (href: string) => {
         const element = document.querySelector(href);
