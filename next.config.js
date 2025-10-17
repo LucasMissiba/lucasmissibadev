@@ -6,6 +6,8 @@ const nextConfig = {
     unoptimized: true,
   },
   distDir: 'out',
+  assetPrefix: '/lucasmissibadev',
+  basePath: '/lucasmissibadev',
 }
 
 module.exports = nextConfig
