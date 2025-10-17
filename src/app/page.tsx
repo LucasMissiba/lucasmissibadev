@@ -32,16 +32,19 @@ export default function Home() {
                 {/* Fundo Silk animado */}
                 <div className="absolute inset-0 z-0">
                     <Silk
-                        speed={5}
-                        scale={1}
-                        color="#7B7481"
-                        noiseIntensity={1.5}
+                        speed={3}
+                        scale={1.2}
+                        color="#4A5568"
+                        noiseIntensity={0.8}
                         rotation={0}
                     />
                 </div>
                 
-                {/* Overlay com fade gradiente */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent z-10" />
+                {/* Overlay com fade gradiente suave */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/20 z-10" />
+                
+                {/* Overlay adicional para suavizar */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent z-10" />
                 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
                     <motion.div
