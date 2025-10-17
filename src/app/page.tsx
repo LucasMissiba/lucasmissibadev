@@ -7,7 +7,9 @@ import Header from '@/components/Header';
 import AboutSection from '@/components/AboutSection';
 import StackGrid from '@/components/StackGrid';
 import Player3D from '@/components/Player3D';
+import CommentsSection from '@/components/CommentsSection';
 import Footer from '@/components/Footer';
+import Silk from '@/components/Silk';
 import { ArrowDown, Code, Music, Sparkles } from 'lucide-react';
 import { ASSETS } from '@/lib/constants';
 
@@ -48,8 +50,22 @@ export default function Home() {
             <Header />
 
             {/* Hero Section */}
-            <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+                {/* Fundo Silk animado */}
+                <div className="absolute inset-0 z-0">
+                    <Silk
+                        speed={5}
+                        scale={1}
+                        color="#7B7481"
+                        noiseIntensity={1.5}
+                        rotation={0}
+                    />
+                </div>
+                
+                {/* Overlay com fade */}
+                <div className="absolute inset-0 bg-black/60 z-10" />
+                
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -185,6 +201,9 @@ export default function Home() {
                     <Player3D />
                 </div>
             </section>
+
+            {/* Seção de Comentários */}
+            <CommentsSection />
 
             <Footer />
         </div>

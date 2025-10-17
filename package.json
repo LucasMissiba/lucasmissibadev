@@ -26,7 +26,10 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "tailwind-merge": "^2.0.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.160.0",
+    "@react-three/fiber": "^8.15.0",
+    "@types/three": "^0.160.0"
   },
     "devDependencies": {
         "eslint": "^8.0.0",

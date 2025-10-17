@@ -15,6 +15,7 @@ const Header: React.FC = () => {
     { id: 'sobre', label: 'Sobre', href: '#sobre' },
     { id: 'stacks', label: 'Stacks', href: '#stacks' },
     { id: 'musica', label: 'Música', href: '#musica' },
+    { id: 'comentarios', label: 'Comentários', href: '#comentarios' },
     { id: 'contato', label: 'Contato', href: '#contato' },
   ], []);
 
