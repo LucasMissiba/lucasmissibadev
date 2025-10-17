@@ -66,19 +66,19 @@ const AboutSection: React.FC = () => {
                             className="space-y-4 text-gray-300 leading-relaxed"
                         >
                             <p className="text-lg">
-                                <span className="font-semibold text-white">Lucas Missiba</span> - Um carioca da Zona Norte que transformou sua paixão por tecnologia em uma jornada de crescimento constante.
+                                Sou <span className="font-semibold text-white">Lucas Missiba</span>, um carioca da Zona Norte que transformei minha paixão por tecnologia em uma jornada de crescimento constante.
                             </p>
 
                             <p>
-                                Da experiência no <span className="text-white font-medium">Tribunal de Justiça do Rio de Janeiro</span>, onde atuou como estagiário de Direito na Vara de Família da Pavuna (2020-2022), até sua ascensão meteórica na <span className="text-white font-medium">Alocama</span>, Lucas demonstrou que determinação e visão sistêmica são as chaves para o sucesso.
+                                Da minha experiência no <span className="text-white font-medium">Tribunal de Justiça do Rio de Janeiro</span>, onde atuei como estagiário de Direito na Vara de Família da Pavuna (2020-2022), até minha ascensão meteórica na <span className="text-white font-medium">Alocama</span>, demonstrei que determinação e visão sistêmica são as chaves para o sucesso.
                             </p>
 
                             <p>
-                                Ingressou na Alocama em dezembro de 2024 como <span className="text-white font-medium">Auxiliar Administrativo</span>, mas sua capacidade técnica excepcional e visão inovadora não passaram despercebidas. Em apenas <span className="text-white font-medium">10 meses</span>, foi promovido para <span className="text-white font-medium">Desenvolvedor Full Stack Júnior</span> em outubro de 2025 - uma conquista que reflete não apenas suas habilidades técnicas, mas sua capacidade de enxergar além do código.
+                                Ingressei na Alocama em dezembro de 2024 como <span className="text-white font-medium">Auxiliar Administrativo</span>, mas minha capacidade técnica excepcional e visão inovadora não passaram despercebidas. Em apenas <span className="text-white font-medium">10 meses</span>, fui promovido para <span className="text-white font-medium">Desenvolvedor Full Stack Júnior</span> em outubro de 2025 - uma conquista que reflete não apenas minhas habilidades técnicas, mas minha capacidade de enxergar além do código.
                             </p>
 
                             <p>
-                                Atualmente cursando <span className="text-white font-medium">Gestão de TI na Estácio de Sá</span> (conclusão em junho/2026) e <span className="text-white font-medium">Cyber Security na FIAP</span> (conclusão em dezembro/2027), Lucas combina conhecimento acadêmico sólido com experiência prática real.
+                                Atualmente curso <span className="text-white font-medium">Gestão de TI na Estácio de Sá</span> (conclusão em junho/2026) e <span className="text-white font-medium">Cyber Security na FIAP</span> (conclusão em dezembro/2027), combinando conhecimento acadêmico sólido com experiência prática real.
                             </p>
 
                             <motion.blockquote
@@ -89,7 +89,7 @@ const AboutSection: React.FC = () => {
                             </motion.blockquote>
 
                             <p>
-                                Com foco em <span className="text-white font-medium">JavaScript e PHP</span>, Lucas desenvolve interfaces imersivas, automações inteligentes e sistemas que fazem a diferença no dia a dia das pessoas.
+                                Com foco em <span className="text-white font-medium">JavaScript e PHP</span>, desenvolvo interfaces imersivas, automações inteligentes e sistemas que fazem a diferença no dia a dia das pessoas.
                             </p>
                         </motion.div>
 

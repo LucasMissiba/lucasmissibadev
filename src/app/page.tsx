@@ -116,12 +116,11 @@ export default function Home() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
-                            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 max-w-4xl mx-auto"
+                            className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 max-w-4xl mx-auto"
                         >
                             {[
                                 { icon: Code, label: "Projetos", value: "5" },
                                 { icon: Sparkles, label: "Tecnologias", value: "25+" },
-                                { icon: Music, label: "Músicas", value: "4" },
                                 { icon: Code, label: "Anos", value: "2" },
                             ].map((stat, index) => (
                                 <motion.div
