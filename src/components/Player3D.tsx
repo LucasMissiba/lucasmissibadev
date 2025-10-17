@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX } from 'lucide-react';
 import Image from 'next/image';
@@ -15,7 +15,33 @@ const Player3D: React.FC = () => {
     const [isMuted, setIsMuted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const audioRef = useRef<HTMLAudioElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleNext = useCallback(() => {
+    const nextMusic = getNextMusic(currentMusic.id);
+    setCurrentMusic(nextMusic);
+    setIsPlaying(false);
+    setCurrentTime(0);
+  }, [currentMusic.id]);
+
+  const handlePrevious = useCallback(() => {
+    const prevMusic = getPreviousMusic(currentMusic.id);
+    setCurrentMusic(prevMusic);
+    setIsPlaying(false);
+    setCurrentTime(0);
+  }, [currentMusic.id]);
+
+  const togglePlayPause = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  }, [isPlaying]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -44,32 +70,6 @@ const Player3D: React.FC = () => {
       audio.removeEventListener('canplay', handleCanPlay);
     };
   }, [currentMusic, handleNext]);
-
-    const togglePlayPause = () => {
-        const audio = audioRef.current;
-        if (!audio) return;
-
-        if (isPlaying) {
-            audio.pause();
-        } else {
-            audio.play();
-        }
-        setIsPlaying(!isPlaying);
-    };
-
-    const handleNext = () => {
-        const nextMusic = getNextMusic(currentMusic.id);
-        setCurrentMusic(nextMusic);
-        setIsPlaying(false);
-        setCurrentTime(0);
-    };
-
-    const handlePrevious = () => {
-        const prevMusic = getPreviousMusic(currentMusic.id);
-        setCurrentMusic(prevMusic);
-        setIsPlaying(false);
-        setCurrentTime(0);
-    };
 
     const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
         const audio = audioRef.current;

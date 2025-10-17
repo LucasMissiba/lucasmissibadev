@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
@@ -10,13 +10,13 @@ const Header: React.FC = () => {
     const [activeSection, setActiveSection] = useState('home');
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const navItems = [
-        { id: 'home', label: 'Home', href: '#home' },
-        { id: 'sobre', label: 'Sobre', href: '#sobre' },
-        { id: 'stacks', label: 'Stacks', href: '#stacks' },
-        { id: 'musica', label: 'Música', href: '#musica' },
-        { id: 'contato', label: 'Contato', href: '#contato' },
-    ];
+  const navItems = useMemo(() => [
+    { id: 'home', label: 'Home', href: '#home' },
+    { id: 'sobre', label: 'Sobre', href: '#sobre' },
+    { id: 'stacks', label: 'Stacks', href: '#stacks' },
+    { id: 'musica', label: 'Música', href: '#musica' },
+    { id: 'contato', label: 'Contato', href: '#contato' },
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
