@@ -8,38 +8,38 @@ export interface Music {
 }
 
 export const musicList: Music[] = [
-    {
-        id: 1,
-        title: "Coding Dreams",
-        artist: "Lucas Missiba",
-        src: "/music/song1.mp3",
-        cover: "/albums/album1.jpg",
-        duration: 240, // 4 minutos
-    },
-    {
-        id: 2,
-        title: "Digital Innovation",
-        artist: "Lucas Missiba",
-        src: "/music/song2.mp3",
-        cover: "/albums/album2.jpg",
-        duration: 195, // 3:15 minutos
-    },
-    {
-        id: 3,
-        title: "Tech Revolution",
-        artist: "Lucas Missiba",
-        src: "/music/song3.mp3",
-        cover: "/albums/album3.jpg",
-        duration: 210, // 3:30 minutos
-    },
-    {
-        id: 4,
-        title: "Future Code",
-        artist: "Lucas Missiba",
-        src: "/music/song4.mp3",
-        cover: "/albums/album4.jpg",
-        duration: 225, // 3:45 minutos
-    },
+  {
+    id: 1,
+    title: "Amores, Vícios e Obsessões",
+    artist: "BK",
+    src: "/music/Amores, Vícios e Obsessões - BK.mp3",
+    cover: "/albums/castelos e ruinas.avif",
+    duration: 240, // 4 minutos
+  },
+  {
+    id: 2,
+    title: "Eu Consegui",
+    artist: "BK",
+    src: "/music/Eu Consegui - BK.mp3",
+    cover: "/albums/diamantes.avif",
+    duration: 195, // 3:15 minutos
+  },
+  {
+    id: 3,
+    title: "Tudo mudou e nada mudou",
+    artist: "BK",
+    src: "/music/Tudo mudou e nada mudou - BK.mp3",
+    cover: "/albums/icarus.avif",
+    duration: 210, // 3:30 minutos
+  },
+  {
+    id: 4,
+    title: "Universo",
+    artist: "BK",
+    src: "/music/Universo - BK.mp3",
+    cover: "/albums/gigantes.png",
+    duration: 225, // 3:45 minutos
+  },
 ];
 
 export const getMusicById = (id: number): Music | undefined => {
