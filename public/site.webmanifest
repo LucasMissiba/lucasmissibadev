@@ -2,7 +2,7 @@
   "name": "Lucas Missiba - Site Pessoal",
   "short_name": "Lucas Missiba",
   "description": "Site pessoal de Lucas Missiba, desenvolvedor Full Stack",
-  "start_url": "/lucasmissibadev",
+  "start_url": "https://lucasmissiba.github.io/lucasmissibadev",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#ffffff",

@@ -1,10 +1,11 @@
 // Constantes para configuração do site
+export const BASE_URL = 'https://lucasmissiba.github.io';
 export const BASE_PATH = '/lucasmissibadev';
 
 // Função para obter o caminho correto baseado no ambiente
 export const getAssetPath = (path: string): string => {
-  // Para GitHub Pages, sempre usar o basePath
-  return `${BASE_PATH}${path}`;
+  // Para GitHub Pages, usar URL absoluta
+  return `${BASE_URL}${BASE_PATH}${path}`;
 };
 
 // URLs dos assets
