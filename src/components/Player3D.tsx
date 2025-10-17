@@ -137,16 +137,12 @@ const Player3D: React.FC = () => {
                         }}
                         style={{ transformStyle: "preserve-3d" }}
                     >
-            <Image
-              src={currentMusic.cover}
-              alt={`Capa do álbum - ${currentMusic.title}`}
-              fill
-              className="object-cover"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='%23333'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='16'%3E🎵%3C/text%3E%3C/svg%3E";
-              }}
-            />
+            <div className="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-6xl mb-4">🎵</div>
+                <p className="text-white text-sm font-medium">Player Musical</p>
+              </div>
+            </div>
                     </motion.div>
 
                     {/* Efeito de brilho */}

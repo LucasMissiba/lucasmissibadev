@@ -54,10 +54,11 @@ const Header: React.FC = () => {
         setIsMenuOpen(false);
     };
 
-    const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-        // Aqui você pode implementar a lógica para alternar o tema
-    };
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    // Alternar tema no documento
+    document.documentElement.classList.toggle('light');
+  };
 
     return (
         <motion.header
